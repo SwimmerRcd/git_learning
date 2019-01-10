@@ -1,0 +1,10 @@
+---- 最小配置 
+-- 全局用户名/ 邮箱 (--global 所有仓; --local 某个仓; --system 系统自用
+git config --global user.name 'Richard.He'
+git config --global user.email '1959800587@qq.com'
+
+-- 查看配置
+git config --list
+git config --list --global
+git config --list --system
+git config --list --local
