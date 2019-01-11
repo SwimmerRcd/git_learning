@@ -56,3 +56,57 @@ git status
 -- 查看已提交历史
 
 git log
+
+-- Changes not staged for commit
+git commit -am'XXX' --添加和提交一起来
+
+
+---- 将本地仓push到gitHub
+
+-- 注册gitHub账号
+
+-- 创建SSH公私钥(身份标识_windows版
+
+# 打开git
+
+mkdir ~/.ssh
+
+cd ~/.ssh
+
+ssh-keygen -t rsa -b 4096 -C "1959800587@qq.com"
+
+-- 把公钥加到gitHub里
+
+ls -al
+
+cat id_rsa.pub 
+
+# 复制cat出的内容 》gitHub账户下拉 》settings 》SSH and GPG keys 》New SSH key 》粘贴 》保存
+
+-- 把gitHub远端仓加入本地git
+
+cd /c/git三剑客/git
+
+git remote -v
+
+# 从远程仓的clone or download的按钮选中use SSH, 复制git地址
+
+git remote add github git@github.com:SwimmerRcd/git_learning.git
+git 
+remote -v
+
+-- push前必须和gitHub远程仓同步一次
+
+git fetch github master
+
+git checkout master 
+
+-- 和远程仓合并
+
+# git merge github/master 没有关联的两个版本树需要用下面的选项才能合并
+
+git merge --allow-unrelated-histories github/master 
+
+-- 将本地Master版本树的修改commit到gitHub远程仓
+
+git push github master
